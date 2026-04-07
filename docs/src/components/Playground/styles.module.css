@@ -1,0 +1,180 @@
+.playground {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 10px;
+  padding: 1.5rem;
+  max-width: 800px;
+}
+
+/* ── Controls ──────────────────────────────────────────────────────────────── */
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.controlGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 160px;
+}
+
+.controlGroup:first-child {
+  flex: 1 1 220px;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.select {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  font-size: 0.9rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.select:focus {
+  border-color: var(--ifm-color-primary);
+}
+
+/* ── Mode toggle ────────────────────────────────────────────────────────────── */
+
+.modeToggle {
+  display: flex;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.modeBtn {
+  flex: 1;
+  padding: 0.45rem 0.9rem;
+  background: var(--ifm-background-color);
+  color: var(--ifm-color-emphasis-700);
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-family: var(--ifm-font-family-monospace);
+  transition: background 0.15s, color 0.15s;
+}
+
+.modeBtn:not(:last-child) {
+  border-right: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.modeBtnActive {
+  background: var(--ifm-color-primary);
+  color: white;
+  font-weight: 600;
+}
+
+/* ── I/O row ────────────────────────────────────────────────────────────────── */
+
+.ioRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ioBox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.ioLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.inputField {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  font-size: 1rem;
+  font-family: var(--ifm-font-family-monospace);
+  outline: none;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+
+.inputField:focus {
+  border-color: var(--ifm-color-primary);
+}
+
+/* Remove number input spinners */
+.inputField[type="number"]::-webkit-outer-spin-button,
+.inputField[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.inputField[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.outputField {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 6px;
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-font-color-base);
+  font-size: 1rem;
+  font-family: var(--ifm-font-family-monospace);
+  min-height: 2.6rem;
+  word-break: break-word;
+  box-sizing: border-box;
+}
+
+.outputError {
+  border-color: var(--ifm-color-danger);
+  background: var(--ifm-color-danger-contrast-background);
+}
+
+.errorText {
+  color: var(--ifm-color-danger);
+  font-size: 0.85rem;
+}
+
+.arrow {
+  font-size: 1.4rem;
+  color: var(--ifm-color-primary);
+  flex-shrink: 0;
+  margin-top: 1.3rem;
+  font-weight: bold;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .ioRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .arrow {
+    text-align: center;
+    margin-top: 0;
+    transform: rotate(90deg);
+  }
+}
