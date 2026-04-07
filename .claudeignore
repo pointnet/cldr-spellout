@@ -1,0 +1,37 @@
+# Dependencies
+!node_modules/
+node_modules/*
+!node_modules/cldr-rbnf/
+
+# Build output
+dist/
+
+# Test coverage
+coverage/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude Code
+.claude/settings.local.json
+
+# Local env
+.env
+.env.local
+
+# Docs site
+docs/node_modules/
+docs/build/
+docs/.docusaurus/

@@ -1,0 +1,53 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 3rem 0;
+  width: 100%;
+  background: var(--ifm-background-surface-color);
+}
+
+.featureCard {
+  padding: 1.5rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  height: 100%;
+  transition: border-color 0.2s;
+}
+
+.featureCard:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+.featureCard h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.exampleList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.exampleList li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0;
+  font-family: var(--ifm-font-family-monospace);
+}
+
+.exampleInput {
+  color: var(--ifm-color-emphasis-700);
+}
+
+.arrow {
+  color: var(--ifm-color-primary);
+  font-weight: bold;
+}
+
+.exampleOutput {
+  color: var(--ifm-color-primary);
+  font-weight: 500;
+}
