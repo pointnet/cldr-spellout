@@ -116,6 +116,14 @@ Node.js v24+ requires `with { type: "json" }` for JSON imports in ESM.
 TypeScript `module:"ES2020"` can't emit these from source, so `scripts/post-build.mjs`
 patches `dist/esm/localeData.js` after compilation. The source stays clean.
 
+**docs/ lockfile and `file:..` drift**
+`docs/package.json` depends on the library via `file:..`. Any change to the parent's `package.json`
+(version, dependencies, engines, etc.) invalidates the `file:` snapshot inside `docs/package-lock.json`.
+This is why `deploy-docs.yml` uses `npm install` (not `npm ci`) for both install steps — `npm install`
+re-resolves the `file:` dep against the current parent and tolerates the drift. After a parent
+`package.json` change, run `cd docs && npm install` locally and commit the updated lockfile to keep
+it in sync.
+
 **IRBNFData rule body semicolons**
 Every body string in a `[descriptor, body]` tuple must end with `;`.
 `fromCldrData` joins all rule sets into one string and the parser splits on `;%` boundaries —
