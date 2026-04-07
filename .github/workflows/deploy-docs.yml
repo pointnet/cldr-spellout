@@ -33,7 +33,7 @@ jobs:
 
       # Build the library so docs/ can install it via "file:.."
       - name: Install library dependencies
-        run: npm ci
+        run: npm install
 
       - name: Build library
         run: npm run build
@@ -41,7 +41,7 @@ jobs:
       # Now build the Docusaurus site
       - name: Install docs dependencies
         working-directory: docs
-        run: npm ci
+        run: npm install
 
       - name: Build docs
         working-directory: docs
